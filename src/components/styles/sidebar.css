@@ -1,0 +1,10 @@
+.sidebarContainer{
+    color: #fff;
+    border: 2px solid #fff;
+    height: 100%;
+    padding: 1rem;
+}
+
+img{
+    border-radius: .5rem;
+}
