@@ -1,5 +1,7 @@
+@import '../../globalColors.module.scss';
+
 .contentHeader{
-    color: #fff;
+    color: $primaryColor;
     height: 85%;
     overflow-y: scroll;
     display: grid;
