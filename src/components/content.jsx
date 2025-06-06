@@ -3,7 +3,7 @@ import contentStyles from "./styles/content.module.scss";
 import axios from "axios";
 import { DeleteFilled, SettingOutlined } from "@ant-design/icons";
 import { Input } from "antd";
-import './styles/antdContent.css'
+import "./styles/antdContent.css";
 
 const Content = ({ setSelectedSong, songs }) => {
   const [albums, setAlbums] = useState([]);
@@ -25,11 +25,14 @@ const Content = ({ setSelectedSong, songs }) => {
   }, []);
   return (
     <div className={`${contentStyles.contentHeader} ${contentStyles.name2}`}>
-<Input addonAfter={<SettingOutlined />} defaultValue="mysite" />
+      <Input addonAfter={<SettingOutlined />} defaultValue="mysite" />
       {songs?.length
         ? songs?.map((eachSong, eachSongIndex) => {
             return (
-              <div className="eachCard" onClick={() => setSelectedSong(eachSong)}>
+              <div
+                className={contentStyles.eachCard}
+                onClick={() => setSelectedSong(eachSong)}
+              >
                 <img src={eachSong?.image[1]?.url} alt="Album" />
                 <div>
                   {eachSong?.name?.length > 10
