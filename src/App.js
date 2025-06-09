@@ -6,11 +6,11 @@ import Content from "./components/content";
 import LeftComponent from "./todo/components/leftComponent";
 import RightComponent from "./todo/components/rightComponent";
 import { useDispatch, useSelector } from "react-redux";
-import { createUser } from "./redux/slices/userSlice";
+import { createUser, getMusic } from "./redux/slices/userSlice";
 const App = () => {
   const dispatch = useDispatch();
 
-  const inputValues = useSelector((state) => state.user.singleUser)
+  const inputValues = useSelector((state) => state.user.allMusic)
 
   console.log(inputValues);
   
@@ -39,8 +39,8 @@ const App = () => {
         name="email"
         onChange={(e) => {
           dispatch(
-            createUser({
-              email: e.target.value,
+            getMusic({
+              text: e.target.value,
             })
           )
         }}
